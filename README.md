@@ -16,11 +16,15 @@ As a bank client
 I want to make a deposit in my account
 
 => result
+
 Api created : http://localhost:8080/api/accounting/deposit
+
 Method : POST
+
 Body request : acountId and amount
 
 Curl:
+
 curl --location --request POST 'http://localhost:8080/api/accounting/deposit' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -30,7 +34,8 @@ curl --location --request POST 'http://localhost:8080/api/accounting/deposit' \
 
 ![image](https://user-images.githubusercontent.com/36199753/152422237-2a949e33-6564-4f71-8a0d-91a43237f8e6.png)
 
-in Java console the new balance will be printed 
+in Java console the new balance will be printed :
+
 ![image](https://user-images.githubusercontent.com/36199753/152421021-be5296f8-d4bc-4ca3-b376-23a7536744d5.png)
 
 
@@ -43,10 +48,15 @@ As a bank client
 I want to make a withdrawal from my account
 
 => result
+
 Api created : http://localhost:8080/api/accounting/withdraw
+
 Method : GET
+
 Body request : acountId and amount
+
 Curl :
+
 curl --location --request GET 'http://localhost:8080/api/accounting/withdraw' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -57,7 +67,8 @@ curl --location --request GET 'http://localhost:8080/api/accounting/withdraw' \
 ![image](https://user-images.githubusercontent.com/36199753/152422194-9543e10d-7298-461d-ba5a-5b6145840ec7.png)
 
 
-in Java console the new balance will be printed 
+in Java console the new balance will be printed :
+
 ![image](https://user-images.githubusercontent.com/36199753/152421732-c0e2d419-e991-41fe-936d-8c0fb6f4d072.png)
 
 ·         US 3:
@@ -69,10 +80,13 @@ As a bank client
 I want to see the history (operation, date, amount, balance) of my operations
 
 => result
+
 Api created : http://localhost:8080/api/accounting/operations-history/{accountId}
+
 Method : GET
 
 Curl:
+
 curl --location --request GET 'http://localhost:8080/api/accounting/operations-history/1'
 
 result in postman after the two operation : deposit and withdraw
