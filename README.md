@@ -15,7 +15,7 @@ As a bank client
 
 I want to make a deposit in my account
 
-=> result
+=> Result:
 
 Api created : http://localhost:8080/api/accounting/deposit
 
@@ -34,7 +34,7 @@ curl --location --request POST 'http://localhost:8080/api/accounting/deposit' \
 
 ![image](https://user-images.githubusercontent.com/36199753/152422237-2a949e33-6564-4f71-8a0d-91a43237f8e6.png)
 
-in Java console the new balance will be printed :
+In Java console the new balance will be printed :
 
 ![image](https://user-images.githubusercontent.com/36199753/152421021-be5296f8-d4bc-4ca3-b376-23a7536744d5.png)
 
@@ -47,7 +47,7 @@ As a bank client
 
 I want to make a withdrawal from my account
 
-=> result
+=> Result:
 
 Api created : http://localhost:8080/api/accounting/withdraw
 
@@ -67,7 +67,7 @@ curl --location --request GET 'http://localhost:8080/api/accounting/withdraw' \
 ![image](https://user-images.githubusercontent.com/36199753/152422194-9543e10d-7298-461d-ba5a-5b6145840ec7.png)
 
 
-in Java console the new balance will be printed :
+In Java console the new balance will be printed :
 
 ![image](https://user-images.githubusercontent.com/36199753/152421732-c0e2d419-e991-41fe-936d-8c0fb6f4d072.png)
 
@@ -79,7 +79,7 @@ As a bank client
 
 I want to see the history (operation, date, amount, balance) of my operations
 
-=> result
+=> Result:
 
 Api created : http://localhost:8080/api/accounting/operations-history/{accountId}
 
@@ -89,11 +89,11 @@ Curl:
 
 curl --location --request GET 'http://localhost:8080/api/accounting/operations-history/1'
 
-result in postman after the two operation : deposit and withdraw
+-Result in postman after the two operations : deposit and withdraw
 
 ![image](https://user-images.githubusercontent.com/36199753/152422150-a496c1fd-1ae0-4459-8f19-7213903c1377.png)
 
-Les tests unitaires :
+Unit tests :
 
 ![image](https://user-images.githubusercontent.com/36199753/152422385-4d479e78-5f10-4a23-b735-d4af08aecb83.png)
 
