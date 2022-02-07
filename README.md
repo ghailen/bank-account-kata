@@ -95,7 +95,5 @@ curl --location --request GET 'http://localhost:8080/api/accounting/operations-h
 
 Unit tests :
 
-![image](https://user-images.githubusercontent.com/36199753/152422385-4d479e78-5f10-4a23-b735-d4af08aecb83.png)
-
- 
+![image](https://user-images.githubusercontent.com/36199753/152817307-fe395671-2d3b-488b-96f3-b72b4cfae764.png)
 
