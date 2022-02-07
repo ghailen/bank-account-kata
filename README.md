@@ -1,8 +1,20 @@
 # bank-account-kata
 
-After running the project two bank accounts will be created ,using static block :
+Create bank account:
 
-![image](https://user-images.githubusercontent.com/36199753/152420800-5c129848-05f6-40da-9a5c-45af2af3f209.png)
+Method : POST
+
+Curl: 
+
+curl --location --request POST 'http://localhost:8080/api/accounting/create' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "accountId":1,
+    "customerId": "098280778",
+    "customerName": "ghailene"
+}'
+
+![image](https://user-images.githubusercontent.com/36199753/152818304-933f0828-8a89-4de2-b003-7ebd70bd2870.png)
 
 
 User Stories
@@ -91,7 +103,7 @@ curl --location --request GET 'http://localhost:8080/api/accounting/operations-h
 
 -Result in postman after the two operations : deposit and withdraw
 
-![image](https://user-images.githubusercontent.com/36199753/152422150-a496c1fd-1ae0-4459-8f19-7213903c1377.png)
+![image](https://user-images.githubusercontent.com/36199753/152817590-07bb5c85-d884-4c88-8ab3-f600ce386902.png)
 
 Unit tests :
 
