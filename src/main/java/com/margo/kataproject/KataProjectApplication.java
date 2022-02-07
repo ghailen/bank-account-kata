@@ -9,7 +9,8 @@ public class KataProjectApplication {
     public static void main(String[] args) {
         SpringApplication.run(KataProjectApplication.class, args);
 
+
     }
-
-
 }
+
+

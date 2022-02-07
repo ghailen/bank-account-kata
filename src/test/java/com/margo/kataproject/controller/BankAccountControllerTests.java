@@ -41,6 +41,24 @@ public class BankAccountControllerTests {
     @Autowired
     private MockMvc mockMvc;
 
+
+    /**
+     * Create success.
+     *
+     * @throws Exception the exception
+     */
+    @Test
+    public void createSuccess() throws Exception {
+        BankAccount bankAccount = new BankAccount(1L, "09828077", "Ghailene", 0.0, new ArrayList<>());
+        Mockito.when(bankAccountService.createAccount(bankAccount)).thenReturn(bankAccount);
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/api/accounting/create").contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(bankAccount))
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isCreated());
+
+    }
+
+
     /**
      * Deposit success.
      *
@@ -113,10 +131,10 @@ public class BankAccountControllerTests {
     @Test
     public void checkOperationsHistorySuccess() throws Exception {
         BankAccount bankAccount = new BankAccount(1L, "09828077", "Ghailene", 500.0, null);
-        OperationHistory operationHistory = new OperationHistory(5L, "Deposit", new Date(), 1000.0, 50);
+        OperationHistory operationHistory = new OperationHistory("Deposit", new Date(), 1000.0, 50);
         List<OperationHistory> operationsHistory = Arrays.asList(operationHistory);
         bankAccount.setOperationHistory(operationsHistory);
-        Mockito.when(bankAccountService.CheckOperationsHistory(1L)).thenReturn(bankAccount.getOperationHistory());
+        Mockito.when(bankAccountService.checkOperationsHistory(1L)).thenReturn(bankAccount.getOperationHistory());
         this.mockMvc.perform(MockMvcRequestBuilders.get("/api/accounting/operations-history/1").contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isAccepted())
@@ -135,7 +153,7 @@ public class BankAccountControllerTests {
         BankAccount bankAccount = new BankAccount(1L, "09828077", "Ghailene", 200.0, null);
         List<OperationHistory> operationsHistory = new ArrayList<>();
         bankAccount.setOperationHistory(operationsHistory);
-        Mockito.when(bankAccountService.CheckOperationsHistory(1L)).thenReturn(bankAccount.getOperationHistory());
+        Mockito.when(bankAccountService.checkOperationsHistory(1L)).thenReturn(bankAccount.getOperationHistory());
         this.mockMvc.perform(MockMvcRequestBuilders.get("/api/accounting/operations-history/1").contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.content().string(org.hamcrest.Matchers.containsString("")))

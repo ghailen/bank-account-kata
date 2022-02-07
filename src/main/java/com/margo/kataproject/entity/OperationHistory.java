@@ -7,13 +7,15 @@ import lombok.Setter;
 
 import java.util.Date;
 
+/**
+ * The type Operation history.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class OperationHistory {
 
-    private Long operationId;
     private String operationType;
     private Date date;
     private Double balance;
